@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dein Kinderlied – Persönlich & Einzigartig</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <img src="logo.png" alt="Dein Kinderlied Logo" class="logo">
+        <h1>Ein Lied nur für dein Kind</h1>
+        <p>Persönlich, liebevoll und unvergesslich.</p>
+        <a href="#bestellen" class="button">Jetzt Lied erstellen für nur 14,99 €</a>
+    </header>
+
+    <section class="vorteile">
+        <h2>Warum ein persönliches Kinderlied?</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Unvergessliche Erinnerung</h3>
+                <p>Ein Lied, das ewig in Erinnerung bleibt.</p>
+            </div>
+            <div class="card">
+                <h3>Persönlich und einzigartig</h3>
+                <p>Individuell auf dein Kind abgestimmt.</p>
+            </div>
+            <div class="card">
+                <h3>Liebevoll gestaltet</h3>
+                <p>Mit Herz und moderner Technik erstellt.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="ablauf">
+        <h2>So einfach geht’s</h2>
+        <ol>
+            <li>Formular ausfüllen</li>
+            <li>Lied wird individuell erstellt</li>
+            <li>Erhalt per E-Mail in wenigen Tagen</li>
+        </ol>
+    </section>
+
+    <section id="bestellen" class="bestellen">
+        <h2>Jetzt Lied personalisieren</h2>
+        <form action="mailto:deine@email.de" method="post" enctype="text/plain">
+            <label for="name">Name des Kindes *</label>
+            <input type="text" id="name" name="Name des Kindes" required>
+
+            <label for="details">Besondere Hobbys, Lieblingsdinge</label>
+            <input type="text" id="details" name="Details" placeholder="z.B. Fußball, Einhörner, Blau">
+
+            <label for="stimmung">Stimmung des Liedes *</label>
+            <select id="stimmung" name="Stimmung" required>
+                <option>Fröhlich</option>
+                <option>Beruhigend</option>
+                <option>Abenteuerlich</option>
+            </select>
+
+            <label for="email">Deine E-Mail-Adresse *</label>
+            <input type="email" id="email" name="Email" required>
+
+            <input type="submit" value="Bestellung absenden" class="button">
+        </form>
+        <p class="zahlungshinweis">Zahlung bequem per <a href="https://www.paypal.me/deinkinderlied" target="_blank">PayPal</a> (14,99 €).</p>
+    </section>
+
+    <footer>
+        <p>© 2025 DeinKinderlied.de • <a href="#impressum">Impressum & Datenschutz</a></p>
+    </footer>
+
+    <section id="impressum" class="impressum">
+        <h2>Impressum & Datenschutz</h2>
+        <p>Verantwortlich: Max Mustermann, Musterstraße 1, 12345 Musterstadt<br>
+        E-Mail: deine@email.de</p>
+        <p>Datenschutz: Deine Angaben werden ausschließlich für die Erstellung deines Liedes genutzt.</p>
+    </section>
+
+</body>
+</html>

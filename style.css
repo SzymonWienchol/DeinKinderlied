@@ -1,0 +1,164 @@
+/* Grundlayout */
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Open Sans', sans-serif;
+    background-color: #f9fbfd;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.hero {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #1e3a8a;
+}
+
+.hero p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background-color: #3b82f6;
+    color: white;
+    padding: 0.9rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #2563eb;
+}
+
+/* Vorteile */
+.vorteile {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #e0e7ff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 280px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #2563eb;
+}
+
+.card p {
+    margin-bottom: 0;
+}
+
+/* Ablauf */
+.ablauf {
+    background-color: #eff6ff;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.ablauf ol {
+    list-style: decimal inside;
+    max-width: 500px;
+    margin: 2rem auto 0;
+    padding: 0;
+    text-align: left;
+}
+
+.ablauf li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+/* Bestellen */
+.bestellen {
+    padding: 3rem 1rem;
+    background-color: #f9fbfd;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form select {
+    padding: 0.8rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+form input[type="submit"] {
+    background-color: #3b82f6;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #2563eb;
+}
+
+.zahlungshinweis {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #f1f5f9;
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.impressum {
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
