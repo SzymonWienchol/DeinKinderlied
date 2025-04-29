@@ -1,0 +1,89 @@
+/* style2.css - Dedicated styles for impressum.html */
+
+/* Base Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Open Sans', sans-serif;
+    background-color: #f9fbfd;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hero/Header */
+.hero {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: #1e3a8a;
+}
+
+/* Legal Content Container */
+.impressum-section {
+    padding: 0 1rem 3rem;
+}
+
+.impressum-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e7ff;
+}
+
+/* Typography */
+h2 {
+    color: #2563eb;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.2rem;
+}
+
+/* Links */
+a {
+    color: #3b82f6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* Back Link */
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #3b82f6;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.back-link:hover {
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .impressum-container {
+        padding: 1.5rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
