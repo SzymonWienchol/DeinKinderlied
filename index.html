@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dein Kinderlied – Persönlich & Einzigartig</title>
-    <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
     <header class="hero">
         <img src="logo.png" alt="Dein Kinderlied Logo" class="logo">
-        <h1>Ein Lied nur für dein Kind</h1>
+        <h1>Ein besonderes Lied, für dein besonderes Kind</h1>
         <p>Persönlich, liebevoll und unvergesslich.</p>
         <a href="#bestellen" class="button">Jetzt Lied erstellen für nur 14,99€</a>
     </header>
@@ -42,13 +42,36 @@
         </ol>
     </section>
 
+<section class="beispiel">
+    <h2>🎧 Beispiel-Lieder anhören</h2>
+    <p>So könnten die personalisierten Kinderlieder für dein Kind klingen:</p>
+    <div class="audio-grid">
+        <div class="audio-item">
+            <h3>Lied 1: Aufbauend</h3>
+            <audio controls>
+                <source src="beispiel1.mp3" type="audio/mpeg">
+                Dein Browser unterstützt dieses Audioformat leider nicht.
+            </audio>
+        </div>
+        <div class="audio-item">
+            <h3>Lied 2: Fröhlich</h3>
+            <audio controls>
+                <source src="beispiel2.mp3" type="audio/mpeg">
+                Dein Browser unterstützt dieses Audioformat leider nicht.
+            </audio>
+        </div>
+    </div>
+</section>
     <section id="bestellen" class="bestellen">
-        <h2>Jetzt Lied personalisieren</h2>
+    <div class="bestellen-container">
+        <h2>🎁 Jetzt Lied personalisieren</h2>
+        <p>Erstelle ein einzigartiges Kinderlied mit nur wenigen Klicks:</p>
+
         <form action="Bestellung@deinkinderlied.de" method="post" enctype="text/plain">
             <label for="name">Name des Kindes *</label>
             <input type="text" id="name" name="Name des Kindes" required>
 
-            <label for="details">Besondere Hobbys, Lieblingsdinge oder einfach worum es in dem Lied gehen soll</label>
+            <label for="details">Besondere Hobbys, Lieblingsdinge oder Thema</label>
             <input type="text" id="details" name="Details" placeholder="z.B. Fußball, Einhörner, Blau">
 
             <label for="stimmung">Stimmung des Liedes *</label>
@@ -63,19 +86,16 @@
 
             <input type="submit" value="Bestellung absenden" class="button">
         </form>
-        <p class="zahlungshinweis">Zahlung noch nicht verfügbar  <a href="https://www.payXXXpal.me/" target="_blank">PayPal</a> (14,99 €).</p>
-    </section>
+
+        <p class="zahlungshinweis">Zahlung noch nicht aktiviert – bald via <a href="https://www.paypal.me/" target="_blank">PayPal</a> (14,99 €)</p>
+    </div>
+</section>
 
     <footer>
-        <p>© 2025 DeinKinderlied.de • <a href="#impressum">Impressum & Datenschutz</a></p>
+      <p>© 2025 DeinKinderlied.de • <a href="impressum.html">Impressum & Datenschutz</a></p>
+
     </footer>
 
-    <section id="impressum" class="impressum">
-        <h2>Impressum & Datenschutz</h2>
-        <p>Verantwortlich: Max Mustermann, Musterstraße 1, 12345 Musterstadt<br>
-        E-Mail: deine@email.de</p>
-        <p>Datenschutz: Deine Angaben werden ausschließlich für die Erstellung deines Liedes genutzt.</p>
-    </section>
 
 </body>
 </html>
