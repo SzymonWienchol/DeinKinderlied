@@ -23,6 +23,11 @@ body {
     color: #1e3a8a;
 }
 
+.logo {
+    width: 120px;
+    margin-bottom: 1rem;
+}
+
 /* Legal Content Container */
 .impressum-section {
     padding: 0 1rem 3rem;
