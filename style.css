@@ -316,3 +316,22 @@ audio {
 .reason p {
     margin-bottom: 0;
 }
+
+
+/* Style for currently playing audio item */
+.audio-item.playing {
+    background-color: #e8f0fe;
+    border-radius: 8px;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Optional: Style the audio controls */
+audio {
+    width: 100%;
+    margin-top: 10px;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color: #e8f0fe;
+}
