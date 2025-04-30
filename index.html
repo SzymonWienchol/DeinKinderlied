@@ -142,6 +142,37 @@
     });
 </script>
 
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const audioPlayers = document.querySelectorAll('audio');
+    const audioItems = document.querySelectorAll('.audio-item');
+    
+    audioPlayers.forEach((player, index) => {
+        // Add unique IDs if not already present
+        if (!player.id) {
+            player.id = `audio-player-${index}`;
+        }
+        
+        player.addEventListener('play', function() {
+            // Pause all other players and reset their UI
+            audioPlayers.forEach((otherPlayer, otherIndex) => {
+                if (otherPlayer !== player) {
+                    otherPlayer.pause();
+                    otherPlayer.currentTime = 0;
+                    audioItems[otherIndex].classList.remove('playing');
+                }
+            });
+            
+            // Mark current item as playing
+            audioItems[index].classList.add('playing');
+        });
+        
+        player.addEventListener('pause', function() {
+            audioItems[index].classList.remove('playing');
+        });
+    });
+});
+</script>
     
 
 </body>
