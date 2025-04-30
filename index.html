@@ -11,7 +11,20 @@
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
 </head>
 <body>
-
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="burger-menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+        </ul>
+    </div>
+</nav>
+    
     <header class="hero">
         <img src="logo.png" alt="Dein Kinderlied Logo" class="logo">
         <h1>Ein besonderes Lied, für dein besonderes Kind</h1>
@@ -100,6 +113,32 @@
 
     </footer>
 
+
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        burgerMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Animate burger to X
+            const bars = document.querySelectorAll('.bar');
+            if(navLinks.classList.contains('active')) {
+                bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                bars[1].style.opacity = '0';
+                bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                bars.forEach(bar => {
+                    bar.style.transform = 'rotate(0) translate(0)';
+                    bar.style.opacity = '1';
+                });
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
