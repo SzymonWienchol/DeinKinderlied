@@ -14,6 +14,24 @@ body {
     padding: 4rem 1rem 3rem;
 }
 
+/* Logo Link Styles */
+.logo-link {
+    display: inline-block; /* Makes the link properly contain the logo */
+    transition: transform 0.3s ease; /* Optional: adds hover effect */
+}
+
+.logo-link:hover {
+    transform: scale(1.05); /* Optional: slight zoom on hover */
+    opacity: 0.9; /* Optional: slight transparency on hover */
+}
+
+/* If you want to remove the default link underline/border */
+.logo-link, .logo-link:hover, .logo-link:focus {
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
 .logo {
     width: 120px;
     margin-bottom: 1rem;
