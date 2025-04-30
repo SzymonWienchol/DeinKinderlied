@@ -204,3 +204,101 @@ audio {
     width: 100%;
     max-width: 400px;
 }
+
+
+/* Burger Menu Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: #1e3a8a;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 200px;
+    height: 100vh;
+    background-color: #f9fbfd;
+    padding: 5rem 1rem 1rem;
+    margin: 0;
+    list-style: none;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+}
+
+.nav-links.active {
+    right: 0;
+}
+
+.nav-links li {
+    margin-bottom: 1.5rem;
+}
+
+.nav-links a {
+    color: #1e3a8a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #3b82f6;
+}
+
+/* Wieso Section */
+.wieso {
+    padding: 3rem 1rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.reasons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.reason {
+    background-color: #eff6ff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 280px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.reason h3 {
+    margin-top: 0;
+    color: #2563eb;
+}
+
+.reason p {
+    margin-bottom: 0;
+}
