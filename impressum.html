@@ -71,5 +71,30 @@ Du hast das Recht auf Auskunft Ã¼ber deine gespeicherten Daten, Berichtigung, LÃ
       </p>
     </div>
   </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const burgerMenu = document.querySelector('.burger-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        burgerMenu.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Animate burger to X
+            const bars = document.querySelectorAll('.bar');
+            if(navLinks.classList.contains('active')) {
+                bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
+                bars[1].style.opacity = '0';
+                bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
+            } else {
+                bars.forEach(bar => {
+                    bar.style.transform = 'rotate(0) translate(0)';
+                    bar.style.opacity = '1';
+                });
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
