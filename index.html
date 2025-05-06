@@ -85,34 +85,65 @@
         </div>
     </div>
 </section>
-    <section id="bestellen" class="bestellen">
-    <div class="bestellen-container">
-        <h2>🎁 Jetzt Lied personalisieren</h2>
-        <p>Erstelle ein einzigartiges Kinderlied mit nur wenigen Klicks:</p>
-
-        <form action="Bestellung@deinkinderlied.de" method="post" enctype="text/plain">
-            <label for="name">Name des Kindes *</label>
-            <input type="text" id="name" name="Name des Kindes" required>
-
-            <label for="details">Besondere Hobbys, Lieblingsdinge oder Thema</label>
-            <input type="text" id="details" name="Details" placeholder="z.B. Fußball, Einhörner, Blau">
-
-            <label for="stimmung">Stimmung des Liedes *</label>
-            <select id="stimmung" name="Stimmung" required>
-                <option>Fröhlich</option>
-                <option>Beruhigend</option>
-                <option>Abenteuerlich</option>
-                <option>Aufbauend</option>
-            </select>
-
-            <label for="email">Deine E-Mail-Adresse *</label>
-            <input type="email" id="email" name="Email" required>
-
-            <input type="submit" value="Bestellung absenden" class="button">
-        </form>
-
-        <p class="zahlungshinweis">Zahlung noch nicht aktiviert – bald via <a href="https://www.paypal.me/" target="_blank">PayPal</a> (14,99 €)</p>
+    <form id="order-form" action="Bestellung/Bestellung.php" method="POST">
+    <input type="hidden" name="csrf_token" id="csrf_token" value="">
+    
+    <div class="form-group">
+        <label for="name">Name des Kindes *</label>
+        <input type="text" id="name" name="child_name" required>
     </div>
+
+    <div class="form-group">
+        <label for="age">Alter des Kindes</label>
+        <input type="number" id="age" name="child_age" min="0" max="17">
+    </div>
+
+    <div class="form-group">
+        <label for="details">Besondere Hobbys, Lieblingsdinge oder Thema</label>
+        <textarea id="details" name="special_details" rows="3" placeholder="z.B. Fußball, Einhörner, Blau"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="stimmung">Stimmung des Liedes *</label>
+        <select id="stimmung" name="mood" required>
+            <option value="">-- Bitte wählen --</option>
+            <option value="fröhlich">Fröhlich</option>
+            <option value="beruhigend">Beruhigend</option>
+            <option value="abenteuerlich">Abenteuerlich</option>
+            <option value="aufbauend">Aufbauend</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Deine E-Mail-Adresse *</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="notes">Besondere Wünsche</label>
+        <textarea id="notes" name="special_requests" rows="2"></textarea>
+    </div>
+
+    <div class="payment-method">
+        <h3>Zahlungsmethode</h3>
+        <div class="payment-options">
+            <label>
+                <input type="radio" name="payment_method" value="paypal" checked> 
+                <img src="https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-100px.png" alt="PayPal" class="payment-logo">
+            </label>
+            <label>
+                <input type="radio" name="payment_method" value="bank-transfer"> 
+                <span>Banküberweisung</span>
+            </label>
+        </div>
+    </div>
+
+    <div class="form-footer">
+        <p class="price">Gesamtpreis: <strong>14,99 €</strong></p>
+        <button type="submit" class="button" id="submit-btn">Jetzt bestellen</button>
+        <p class="small-text">Mit der Bestellung akzeptierst du unsere <a href="impressum.html">AGBs</a>.</p>
+    </div>
+</form>
 </section>
 
     <footer>
@@ -177,6 +208,45 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
     
+<script>
+document.getElementById('csrf_token').value = crypto.randomUUID() || Math.random().toString(36).substring(2);
 
+document.getElementById('order-form')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = this;
+    const submitBtn = document.getElementById('submit-btn');
+    
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+    
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="spinner"></span> Wird gesendet...';
+    
+    try {
+        const formData = new FormData(form);
+        
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (response.redirected) {
+            window.location.href = response.url;
+        } else {
+            const result = await response.text();
+            alert(result.includes('error') ? 'Fehler: ' + result : result);
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Jetzt bestellen';
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Ein Fehler ist aufgetreten. Bitte versuche es später erneut.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Jetzt bestellen';
+    }
+});
+</script>
 </body>
 </html>
