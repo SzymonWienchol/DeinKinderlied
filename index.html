@@ -10,6 +10,9 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
 </head>
+
+
+
 <body>
     <nav class="navbar">
     <div class="navbar-container">
@@ -248,5 +251,21 @@ document.getElementById('order-form')?.addEventListener('submit', async function
     }
 });
 </script>
+
+
+<div id="fullpage-notification" class="fullpage-notification">
+    <div class="notification-box">
+        <p>Entschuldigung, jedoch funktioniert das Bestellformular noch nicht.<br>
+        Falls Sie trotzdem eine Bestellung aufgeben möchten:<br>
+        <a href="mailto:Bestellung@deinkinderlied.de">Bestellung@deinkinderlied.de</a></p>
+        <button id="close-btn" class="close-btn">Verstanden</button>
+    </div>
+
+<script>
+document.getElementById('close-btn').addEventListener('click', function() {
+    document.getElementById('fullpage-notification').style.display = 'none';
+});
+</script>
+</div>
 </body>
 </html>
