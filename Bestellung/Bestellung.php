@@ -4,7 +4,8 @@ header('Content-Type: text/html; charset=utf-8');
 // Configuration
 $recipientEmail = 'info@deinkinderlied.de'; 
 $websiteName = 'DeinKinderlied.de';
-$orderStoragePath = __DIR__ . '/Bestellungen/'; //
+$orderStoragePath = __DIR__ . '/bestellungen/';
+header("Location: danke.php?order_id=" . urlencode($orderId));
 
 // Validate and sanitize input
 $requiredFields = ['child_name', 'mood', 'email'];
