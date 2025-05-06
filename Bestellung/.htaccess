@@ -12,3 +12,12 @@ Options -Indexes
 <FilesMatch "\.json$">
     Deny from all
 </FilesMatch>
+# Block direct access to bestellungen/
+<FilesMatch "^.*$">
+    Deny from all
+</FilesMatch>
+
+# Allow only Bestellung.php
+<Files Bestellung.php>
+    Allow from all
+</Files>
