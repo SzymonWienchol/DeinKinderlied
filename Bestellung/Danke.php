@@ -18,8 +18,8 @@ $orderId = htmlspecialchars($_GET['order_id'] ?? '');
                 <div class="bar"></div>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Startseite</a></li>
-                <li><a href="impressum.html">Impressum</a></li>
+                <li><a href="../index.html">Startseite</a></li>
+                <li><a href="../impressum.html">Impressum</a></li>
             </ul>
         </div>
     </nav>
