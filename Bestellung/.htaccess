@@ -1,0 +1,14 @@
+# Prevent directory listing
+Options -Indexes
+
+# Protect against XSS
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header always append X-Frame-Options SAMEORIGIN
+    Header set X-Content-Type-Options nosniff
+</IfModule>
+
+# Prevent access to JSON files
+<FilesMatch "\.json$">
+    Deny from all
+</FilesMatch>
