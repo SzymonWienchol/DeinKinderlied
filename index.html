@@ -88,8 +88,8 @@
         </div>
     </div>
 </section>
-    <form id="order-form" action="Bestellung/Bestellung.php" method="POST">
-    <input type="hidden" name="csrf_token" id="csrf_token" value="">
+   <form name="bestellung" method="POST" netlify data-netlify-recaptcha="true">
+  <input type="hidden" name="form-name" value="bestellung">
     
     <div class="form-group">
         <label for="name">Name des Kindes *</label>
@@ -127,6 +127,13 @@
         <textarea id="notes" name="special_requests" rows="2"></textarea>
     </div>
 
+  <div class="dsgvo-checkbox">
+    <input type="checkbox" id="dsgvo" name="dsgvo_consent" required>
+    <label for="dsgvo">
+      Ich stimme der <a href="impressum.html">Datenverarbeitung</a> zu
+    </label>
+  </div>
+
     <div class="payment-method">
         <h3>Zahlungsmethode</h3>
         <div class="payment-options">
@@ -147,7 +154,11 @@
         <p class="small-text">Mit der Bestellung akzeptierst du unsere <a href="impressum.html">AGBs</a>.</p>
     </div>
 </form>
+  <button type="submit" class="button">Bestellung per E-Mail anfragen</button>
+</form>
 </section>
+
+
 
     <footer>
       <p>© 2025 DeinKinderlied.de • <a href="impressum.html">Impressum & Datenschutz</a></p>
