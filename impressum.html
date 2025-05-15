@@ -3,98 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum & Datenschutz - DeinKinderlied.de</title>
-   <link rel="stylesheet" href="style2.css" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="favicon-180x180.png" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <title>Dein Kinderlied – Persönlich & Einzigartig</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <nav class="navbar">
-    <div class="navbar-container">
-        <div class="burger-menu">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+        <div class="navbar-container">
+            <div class="burger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="impressum.html">Impressum</a></li>
+            </ul>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Startseite</a></li>
-            <li><a href="impressum.html">Impressum</a></li>
-        </ul>
-    </div>
-</nav>
-  
-  <header class="hero">
-    <a href="index.html" class="logo-link">
-    <img src="logo.png" alt="Dein Kinderlied Logo" class="logo">
-</a>
-    <h1>Impressum & Datenschutz</h1>
-  </header>
+    </nav>
 
-  <section class="impressum-section">
-    <div class="impressum-container">
-      <h2>Impressum</h2>
-      <p>
-        Angaben gemäß § 5 TMG:<br>
-        Natalia Wienchol<br>
-        Bahnstraße 11<br>
-        58119 Hagen<br>
-        Deutschland<br><br>
-        E-Mail: <a href="mailto:Datenschutz@deinkinderlied.de">Datenschutz@deinkinderlied.de</a>
-      </p>
+    <header class="hero">
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="Dein Kinderlied Logo" class="logo">
+        </a>
+        <h1>Ein besonderes Lied, für dein besonderes Kind</h1>
+        <p>Persönlich, liebevoll und unvergesslich.</p>
+        <a href="#bestellen" class="button">Jetzt Lied erstellen für nur 14,99€</a>
+    </header>
 
-      <h2>Datenschutzerklärung</h2>
-<p>
-Wir verarbeiten personenbezogene Daten (z. B. Name des Kindes, Liedthemen, E-Mail-Adresse) ausschließlich zur Erstellung und Zustellung eines personalisierten Kinderliedes.
-</p>
+    <!-- Your existing sections (vorteile, ablauf, beispiel) remain unchanged -->
 
-<p>
-Für die Generierung der Musik nutzen wir den Dienst <strong>Suno.ai</strong>, betrieben von Suno, Inc. (USA). Die personenbezogenen Daten (z. B. Liedbeschreibung, Name) werden dafür automatisiert an die Plattform übermittelt. Die Nutzung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) sowie Art. 49 Abs. 1 lit. b DSGVO (Übermittlung zur Vertragserfüllung mit ausdrücklicher Zustimmung).
-</p>
+    <section id="bestellen" class="bestellen">
+        <div class="bestellen-container">
+            <h2>🎁 Jetzt Lied personalisieren</h2>
+            <p>Erstelle ein einzigartiges Kinderlied mit nur wenigen Klicks:</p>
 
-<p>
-Die Daten werden nach Versand des Liedes gelöscht, spätestens jedoch nach 30 Tagen. Eine weitergehende Nutzung oder Speicherung findet nicht statt.
-</p>
+            <!-- NETLIFY FORM -->
+            <form name="bestellung" method="POST" netlify data-netlify-recaptcha="true">
+                <input type="hidden" name="form-name" value="bestellung">
+                
+                <div class="form-group">
+                    <label for="name">Name des Kindes *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-<p>
-Verantwortlich für die Datenverarbeitung ist:  
-Natalia Wienchol, Bahnstraße 11, 58119 Hagen, E-Mail: <a href="Datenschutz@deinkinderlied.de">Datenschutz@deinkinderlied.de</a>
-</p>
+                <div class="form-group">
+                    <label for="details">Besondere Hobbys oder Lieblingsthema</label>
+                    <input type="text" id="details" name="details" placeholder="z.B. Fußball, Einhörner, Blau">
+                </div>
 
-<p>
-Du hast das Recht auf Auskunft über deine gespeicherten Daten, Berichtigung, Löschung oder Einschränkung der Verarbeitung. Bei Fragen oder Beschwerden kannst du dich jederzeit an uns oder an die zuständige Datenschutzbehörde wenden.
-</p>
+                <div class="form-group">
+                    <label for="stimmung">Stimmung des Liedes *</label>
+                    <select id="stimmung" name="stimmung" required>
+                        <option value="fröhlich">Fröhlich</option>
+                        <option value="beruhigend">Beruhigend</option>
+                        <option value="abenteuerlich">Abenteuerlich</option>
+                    </select>
+                </div>
 
-      <p style="margin-top: 2rem;">
-        <a href="index.html">&larr; Zurück zur Startseite</a>
-      </p>
-    </div>
-  </section>
+                <div class="form-group">
+                    <label for="email">Deine E-Mail-Adresse *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const burgerMenu = document.querySelector('.burger-menu');
-        const navLinks = document.querySelector('.nav-links');
-        
-        burgerMenu.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            
-            // Animate burger to X
-            const bars = document.querySelectorAll('.bar');
-            if(navLinks.classList.contains('active')) {
-                bars[0].style.transform = 'rotate(45deg) translate(5px, 6px)';
-                bars[1].style.opacity = '0';
-                bars[2].style.transform = 'rotate(-45deg) translate(5px, -6px)';
-            } else {
-                bars.forEach(bar => {
-                    bar.style.transform = 'rotate(0) translate(0)';
-                    bar.style.opacity = '1';
-                });
-            }
+                <div class="dsgvo-checkbox">
+                    <input type="checkbox" id="dsgvo" name="dsgvo_consent" required>
+                    <label for="dsgvo">
+                        Ich akzeptiere die <a href="impressum.html">Datenschutzbestimmungen</a> *
+                    </label>
+                </div>
+
+                <div data-netlify-recaptcha></div>
+
+                <button type="submit" class="button">Bestellung absenden</button>
+            </form>
+
+            <p class="zahlungshinweis">Zahlung via <a href="https://www.paypal.me/" target="_blank">PayPal</a> (14,99€)</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 DeinKinderlied.de • <a href="impressum.html">Impressum & Datenschutz</a></p>
+    </footer>
+
+    <script>
+        // Burger Menu
+        document.querySelector('.burger-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
-    });
-</script>
 
+        // Audio Control
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.addEventListener('play', () => {
+                document.querySelectorAll('audio').forEach(a => {
+                    if (a !== audio) a.pause();
+                });
+            });
+        });
+    </script>
 </body>
 </html>
